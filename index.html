@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="L'Adélaïde — Crêperie Café Barista au Puy-en-Velay. Galettes sarrasin bio, crêpes sucrées, brunch, jus frais pressés. 1 Faubourg Saint-Jean, 43000 Le Puy-en-Velay. Tél: 04 71 07 32 48">
-  <title>L'Adélaïde — Crêperie · Café Barista | Le Puy-en-Velay</title>
+  <meta name="description" content="L'Adélaïde, crêperie café barista au Puy-en-Velay. Galettes sarrasin bio, crêpes sucrées, brunch, jus frais pressés. 1 Faubourg Saint-Jean, 43000 Le Puy-en-Velay. Tél: 04 71 07 32 48">
+  <title>L'Adélaïde — Crêperie Café Barista | Le Puy-en-Velay</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:      #FAF6F0;
-      --beige:      #F0E6D2;
-      --brown-lt:   #C9A882;
-      --brown:      #8B5E3C;
-      --brown-dk:   #4A2C1A;
-      --coffee:     #251508;
-      --gold:       #D4A840;
-      --gold-lt:    #F0CC70;
-      --sage:       #5A7048;
-      --white:      #FFFFFF;
-      --text:       #2C1A0E;
-      --text-mid:   #6B4F3A;
-      --text-lt:    #9E7B62;
-      --border:     #E8DCCC;
-      --nav-h:      72px;
-      --radius:     6px;
+      --cream:    #FAF6F0;
+      --beige:    #F0E6D2;
+      --brown-lt: #C9A882;
+      --brown:    #8B5E3C;
+      --brown-dk: #4A2C1A;
+      --coffee:   #251508;
+      --gold:     #D4A840;
+      --gold-lt:  #F0CC70;
+      --sage:     #5A7048;
+      --white:    #FFFFFF;
+      --text:     #2C1A0E;
+      --text-mid: #6B4F3A;
+      --text-lt:  #9E7B62;
+      --border:   #E8DCCC;
+      --nav-h:    72px;
+      --r:        6px;
     }
 
     html { scroll-behavior: smooth; }
@@ -41,10 +42,9 @@
       line-height: 1.65;
       overflow-x: hidden;
     }
-
     img { display: block; }
 
-    /* ── NAV ─────────────────────────────────────────── */
+    /* ── NAV ─────────────────────────────────── */
     #nav {
       position: fixed;
       inset: 0 0 auto 0;
@@ -57,7 +57,6 @@
       background: var(--coffee);
       box-shadow: 0 2px 24px rgba(0,0,0,.4);
     }
-
     .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
@@ -66,7 +65,6 @@
       align-items: center;
       justify-content: space-between;
     }
-
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.45rem;
@@ -93,7 +91,6 @@
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--gold); }
-
     .nav-tel {
       display: inline-flex;
       align-items: center;
@@ -107,12 +104,8 @@
       letter-spacing: .05em !important;
       transition: background .2s, transform .2s !important;
     }
-    .nav-tel:hover {
-      background: #fff !important;
-      transform: scale(1.03);
-    }
+    .nav-tel:hover { background: #fff !important; transform: scale(1.03); }
 
-    /* hamburger */
     .ham {
       display: none;
       flex-direction: column;
@@ -121,23 +114,16 @@
       padding: 6px;
     }
     .ham span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: all .3s;
+      display: block; width: 22px; height: 2px;
+      background: #fff; border-radius: 2px; transition: all .3s;
     }
     .ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .ham.open span:nth-child(2) { opacity: 0; }
     .ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* mobile drawer */
     .nav-drawer {
       display: none;
       position: fixed;
-      top: var(--nav-h);
-      left: 0; right: 0;
+      top: var(--nav-h); left: 0; right: 0;
       background: var(--coffee);
       padding: 2rem;
       flex-direction: column;
@@ -147,518 +133,224 @@
     }
     .nav-drawer.open { display: flex; }
     .nav-drawer a {
-      color: rgba(255,255,255,.82);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+      color: rgba(255,255,255,.82); text-decoration: none;
+      font-size: 1rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
     }
 
-    /* ── HERO ────────────────────────────────────────── */
+    /* ── HERO ────────────────────────────────── */
     #hero {
-      height: 100vh;
-      min-height: 620px;
+      height: 100vh; min-height: 620px;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      display: flex; align-items: center; justify-content: center; text-align: center;
       overflow: hidden;
     }
-
     .hero-bg {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background:
         linear-gradient(to bottom, rgba(20,8,2,.55) 0%, rgba(20,8,2,.28) 45%, rgba(20,8,2,.72) 100%),
         url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
       transform: scale(1.08);
       transition: transform 10s ease;
     }
-
     .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 820px;
-      padding: 0 1.5rem;
+      position: relative; z-index: 1;
+      max-width: 820px; padding: 0 1.5rem;
     }
-
     .chip {
       display: inline-block;
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(212,168,64,.5);
-      border-radius: 50px;
-      padding: .35rem 1.1rem;
-      margin-bottom: 1.1rem;
+      font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(212,168,64,.5); border-radius: 50px;
+      padding: .35rem 1.1rem; margin-bottom: 1.1rem;
     }
-
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(3.8rem, 9vw, 7rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: .6rem;
+      font-weight: 700; color: #fff; line-height: 1; margin-bottom: .6rem;
     }
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
+    .hero-title em { font-style: italic; color: var(--gold); }
     .hero-sub {
       font-size: clamp(.85rem, 2vw, 1.05rem);
-      font-weight: 300;
-      color: rgba(255,255,255,.8);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      margin-bottom: .7rem;
+      font-weight: 300; color: rgba(255,255,255,.8);
+      letter-spacing: .18em; text-transform: uppercase; margin-bottom: .7rem;
     }
     .hero-sub span { color: var(--brown-lt); margin: 0 .4em; }
-
     .hero-addr {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: .4rem;
-      color: rgba(255,255,255,.55);
-      font-size: .87rem;
-      margin-bottom: 2.5rem;
+      display: flex; align-items: center; justify-content: center; gap: .4rem;
+      color: rgba(255,255,255,.55); font-size: .87rem; margin-bottom: 2.5rem;
     }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn-gold {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: var(--gold);
-      color: var(--coffee);
-      padding: .9rem 2.1rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: .88rem;
-      text-decoration: none;
-      letter-spacing: .06em;
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--gold); color: var(--coffee);
+      padding: .9rem 2.1rem; border-radius: 50px;
+      font-weight: 700; font-size: .88rem; text-decoration: none; letter-spacing: .06em;
       transition: background .25s, transform .25s, box-shadow .25s;
     }
-    .btn-gold:hover {
-      background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(0,0,0,.3);
-    }
-
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.3); }
     .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: transparent;
-      color: #fff;
-      padding: .9rem 2.1rem;
-      border-radius: 50px;
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent; color: #fff;
+      padding: .9rem 2.1rem; border-radius: 50px;
       border: 1.5px solid rgba(255,255,255,.55);
-      font-weight: 500;
-      font-size: .88rem;
-      text-decoration: none;
+      font-weight: 500; font-size: .88rem; text-decoration: none;
       transition: background .25s, border-color .25s;
     }
-    .btn-ghost:hover {
-      background: rgba(255,255,255,.1);
-      border-color: #fff;
-    }
-
+    .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: #fff; }
     .hero-caret {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .4rem;
-      color: rgba(255,255,255,.45);
-      font-size: .7rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 1;
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      color: rgba(255,255,255,.45); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
     }
     .caret-line {
-      width: 1px;
-      height: 38px;
+      width: 1px; height: 38px;
       background: linear-gradient(to bottom, rgba(255,255,255,.45), transparent);
       animation: caretPulse 2.2s ease infinite;
     }
-    @keyframes caretPulse {
-      0%,100% { opacity:.45; }
-      50% { opacity:.9; }
-    }
+    @keyframes caretPulse { 0%,100%{opacity:.45}50%{opacity:.9} }
 
-    /* ── STRIP ───────────────────────────────────────── */
-    .strip {
-      background: var(--coffee);
-      padding: 1.1rem 5%;
-    }
+    /* ── STRIP ───────────────────────────────── */
+    .strip { background: var(--coffee); padding: 1.1rem 5%; }
     .strip-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: 1rem;
-      flex-wrap: wrap;
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-around;
+      gap: 1rem; flex-wrap: wrap;
     }
     .strip-item {
-      display: flex;
-      align-items: center;
-      gap: .55rem;
-      color: rgba(255,255,255,.78);
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .04em;
+      display: flex; align-items: center; gap: .55rem;
+      color: rgba(255,255,255,.78); font-size: .82rem; font-weight: 500; letter-spacing: .04em;
     }
-    .strip-item .ico { font-size: 1.2rem; }
-    .strip-sep {
-      width: 1px;
-      height: 18px;
-      background: rgba(255,255,255,.12);
-    }
+    .strip-item i { font-size: 1rem; color: var(--gold); width: 18px; text-align: center; }
+    .strip-sep { width: 1px; height: 18px; background: rgba(255,255,255,.12); }
 
-    /* ── SECTIONS BASE ───────────────────────────────── */
+    /* ── SECTIONS ────────────────────────────── */
     section { padding: 6rem 5%; }
-
-    .inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
+    .inner { max-width: 1200px; margin: 0 auto; }
     .eyebrow {
-      display: block;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--brown);
-      margin-bottom: .6rem;
+      display: block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--brown); margin-bottom: .6rem;
     }
-
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.18;
-      margin-bottom: 1.4rem;
+      font-weight: 700; color: var(--text); line-height: 1.18; margin-bottom: 1.4rem;
     }
     h2 em { font-style: italic; color: var(--brown); }
+    .lead { font-size: 1.04rem; color: var(--text-mid); line-height: 1.82; max-width: 600px; }
 
-    .lead {
-      font-size: 1.04rem;
-      color: var(--text-mid);
-      line-height: 1.82;
-      max-width: 600px;
-    }
-
-    /* ── ABOUT ───────────────────────────────────────── */
+    /* ── ABOUT ───────────────────────────────── */
     #about { background: #fff; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .about-img-wrap { position: relative; }
-
-    .about-img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      border-radius: var(--radius);
-    }
-
+    .about-img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--r); }
     .about-seal {
-      position: absolute;
-      bottom: -1.5rem;
-      right: -1.5rem;
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: var(--coffee);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: .7rem;
-      font-weight: 700;
-      line-height: 1.4;
-      text-transform: uppercase;
-      letter-spacing: .04em;
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      width: 110px; height: 110px; border-radius: 50%;
+      background: var(--gold); color: var(--coffee);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; font-size: .7rem; font-weight: 700; line-height: 1.4;
+      text-transform: uppercase; letter-spacing: .04em;
       box-shadow: 0 8px 30px rgba(212,168,64,.45);
     }
-
-    blockquote {
-      margin: 1.8rem 0;
-      padding-left: 1.3rem;
-      border-left: 3px solid var(--gold);
-    }
+    blockquote { margin: 1.8rem 0; padding-left: 1.3rem; border-left: 3px solid var(--gold); }
     blockquote p {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.18rem;
-      color: var(--brown);
-      line-height: 1.6;
+      font-style: italic; font-size: 1.18rem; color: var(--brown); line-height: 1.6;
     }
-
-    .tags {
-      display: flex;
-      gap: .65rem;
-      flex-wrap: wrap;
-      margin-top: 1.6rem;
-    }
+    .tags { display: flex; gap: .65rem; flex-wrap: wrap; margin-top: 1.6rem; }
     .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-      padding: .35rem .95rem;
-      background: var(--beige);
-      color: var(--brown);
-      border-radius: 50px;
-      font-size: .78rem;
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .35rem .95rem; background: var(--beige); color: var(--brown);
+      border-radius: 50px; font-size: .78rem; font-weight: 600;
     }
+    .tag i { font-size: .8rem; }
 
-    /* ── MENU ────────────────────────────────────────── */
+    /* ── CARTE ───────────────────────────────── */
     #carte { background: var(--cream); }
-
-    .carte-head {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
+    .carte-head { text-align: center; margin-bottom: 3.5rem; }
     .carte-head .lead { margin: 0 auto; }
-
     .tabs {
-      display: flex;
-      gap: .5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 1.8rem;
-      margin-bottom: 3rem;
+      display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 1.8rem; margin-bottom: 3rem;
     }
     .tab-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      padding: .55rem 1.3rem;
-      background: transparent;
-      color: var(--text-mid);
-      border: 1.5px solid var(--border);
-      border-radius: 50px;
-      font-size: .85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all .22s;
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .55rem 1.3rem; background: transparent;
+      color: var(--text-mid); border: 1.5px solid var(--border); border-radius: 50px;
+      font-size: .85rem; font-weight: 600; cursor: pointer; transition: all .22s;
       font-family: 'Inter', sans-serif;
     }
+    .tab-btn i { font-size: .85rem; }
     .tab-btn:hover { border-color: var(--brown); color: var(--brown); }
     .tab-btn.on { background: var(--brown); color: #fff; border-color: var(--brown); }
-
     .tab-pane { display: none; }
     .tab-pane.on { display: block; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
     .card {
-      background: #fff;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      overflow: hidden;
+      background: #fff; border-radius: var(--r); border: 1px solid var(--border); overflow: hidden;
       transition: transform .25s, box-shadow .25s;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 42px rgba(44,26,14,.11);
-    }
-
-    .card-img {
-      width: 100%;
-      height: 195px;
-      object-fit: cover;
-    }
-
+    .card:hover { transform: translateY(-5px); box-shadow: 0 14px 42px rgba(44,26,14,.11); }
+    .card-img { width: 100%; height: 195px; object-fit: cover; }
     .card-body { padding: 1.2rem 1.4rem 1.5rem; }
-
-    .card-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: .45rem;
-      gap: .5rem;
-    }
-
-    .card-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .card-price {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--brown);
-      white-space: nowrap;
-    }
-
-    .card-desc {
-      font-size: .85rem;
-      color: var(--text-lt);
-      line-height: 1.65;
-    }
-
+    .card-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .45rem; gap: .5rem; }
+    .card-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--text); }
+    .card-price { font-size: 1.05rem; font-weight: 700; color: var(--brown); white-space: nowrap; }
+    .card-desc { font-size: .85rem; color: var(--text-lt); line-height: 1.65; }
     .badge {
-      display: inline-block;
-      margin-top: .7rem;
-      padding: .2rem .65rem;
-      background: var(--beige);
-      color: var(--brown);
-      border-radius: 50px;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .05em;
-      text-transform: uppercase;
+      display: inline-block; margin-top: .7rem; padding: .2rem .65rem;
+      background: var(--beige); color: var(--brown); border-radius: 50px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
     }
+    .tab-note { text-align: center; margin-top: 1.4rem; font-size: .85rem; color: var(--text-lt); }
+    .tab-note i { margin-right: .35rem; }
 
-    .tab-note {
-      text-align: center;
-      margin-top: 1.4rem;
-      font-size: .85rem;
-      color: var(--text-lt);
-    }
-
-    /* ── GALLERY ─────────────────────────────────────── */
-    #galerie {
-      background: var(--coffee);
-      padding: 4.5rem 0;
-    }
-
-    .gal-head {
-      text-align: center;
-      padding: 0 5%;
-      margin-bottom: 2.5rem;
-    }
+    /* ── GALLERY ─────────────────────────────── */
+    #galerie { background: var(--coffee); padding: 4.5rem 0; }
+    .gal-head { text-align: center; padding: 0 5%; margin-bottom: 2.5rem; }
     .gal-head h2 { color: #fff; }
     .gal-head h2 em { color: var(--gold); }
     .gal-head .eyebrow { color: var(--brown-lt); }
-
     .gal-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-auto-rows: 240px;
-      gap: 6px;
-      padding: 0 1.5%;
+      gap: 6px; padding: 0 1.5%;
     }
-
-    .gal-item {
-      overflow: hidden;
-      border-radius: 4px;
-    }
-    .gal-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .55s ease;
-    }
+    .gal-item { overflow: hidden; border-radius: 4px; }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
     .gal-item:hover img { transform: scale(1.06); }
-
     .gal-item:nth-child(1) { grid-column: span 5; grid-row: span 2; }
     .gal-item:nth-child(2) { grid-column: span 4; }
     .gal-item:nth-child(3) { grid-column: span 3; }
     .gal-item:nth-child(4) { grid-column: span 3; }
     .gal-item:nth-child(5) { grid-column: span 4; }
 
-    /* ── CONTACT ─────────────────────────────────────── */
+    /* ── CONTACT ─────────────────────────────── */
     #contact { background: #fff; }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .map-wrap {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 8px 36px rgba(0,0,0,.1);
-      height: 440px;
-    }
-    .map-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
+    .contact-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 5rem; align-items: start; }
+    .map-wrap { border-radius: var(--r); overflow: hidden; box-shadow: 0 8px 36px rgba(0,0,0,.1); height: 440px; }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
     .info-block { padding-top: .5rem; }
-
-    .info-item {
-      display: flex;
-      gap: 1.1rem;
-      margin-bottom: 1.9rem;
-      align-items: flex-start;
-    }
-
+    .info-item { display: flex; gap: 1.1rem; margin-bottom: 1.9rem; align-items: flex-start; }
     .info-ico {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--beige);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1rem;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--beige); color: var(--brown);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1rem;
     }
-
     .info-text strong {
-      display: block;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--text-lt);
-      margin-bottom: .25rem;
+      display: block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text-lt); margin-bottom: .25rem;
     }
     .info-text a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 600;
-      transition: color .2s;
+      color: var(--text); text-decoration: none;
+      font-size: 1.05rem; font-weight: 600; transition: color .2s;
     }
     .info-text a:hover { color: var(--brown); }
     .info-text p { font-size: .95rem; color: var(--text); }
-
-    .hours {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .88rem;
-    }
+    .hours { width: 100%; border-collapse: collapse; font-size: .88rem; }
     .hours tr { border-bottom: 1px solid var(--border); }
     .hours tr:last-child { border: none; }
     .hours td { padding: .55rem 0; }
@@ -666,102 +358,44 @@
     .hours td:last-child { text-align: right; }
     .hours .ferme { color: var(--text-lt); }
     .open-tag {
-      display: inline-block;
-      padding: .15rem .55rem;
-      background: rgba(90,112,72,.14);
-      color: var(--sage);
-      border-radius: 50px;
-      font-size: .72rem;
-      font-weight: 700;
-      margin-left: .4rem;
+      display: inline-block; padding: .15rem .55rem;
+      background: rgba(90,112,72,.14); color: var(--sage);
+      border-radius: 50px; font-size: .72rem; font-weight: 700; margin-left: .4rem;
     }
-
-    .socials {
-      display: flex;
-      gap: .6rem;
-      margin-top: .35rem;
+    .late-tag {
+      display: inline-block; padding: .15rem .55rem;
+      background: rgba(212,168,64,.15); color: var(--brown);
+      border-radius: 50px; font-size: .72rem; font-weight: 700; margin-left: .4rem;
     }
+    .socials { display: flex; gap: .6rem; margin-top: .35rem; }
     .soc-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--beige);
-      color: var(--brown);
-      text-decoration: none;
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--beige); color: var(--brown); text-decoration: none;
       transition: background .22s, color .22s;
     }
     .soc-btn:hover { background: var(--brown); color: #fff; }
 
-    /* ── FOOTER ──────────────────────────────────────── */
-    footer {
-      background: var(--coffee);
-      color: rgba(255,255,255,.55);
-      padding: 3.5rem 5% 2.5rem;
-      text-align: center;
-    }
-
-    .ft-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: .3rem;
-    }
+    /* ── FOOTER ──────────────────────────────── */
+    footer { background: var(--coffee); color: rgba(255,255,255,.55); padding: 3.5rem 5% 2.5rem; text-align: center; }
+    .ft-logo { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
     .ft-logo span { color: var(--gold); }
-
-    .ft-sub {
-      font-size: .78rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin-bottom: 1.6rem;
-      color: rgba(255,255,255,.45);
-    }
-
-    .ft-nav {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 1.6rem;
-    }
-    .ft-nav a {
-      color: rgba(255,255,255,.5);
-      text-decoration: none;
-      font-size: .83rem;
-      transition: color .2s;
-    }
+    .ft-sub { font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1.6rem; color: rgba(255,255,255,.45); }
+    .ft-nav { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.6rem; }
+    .ft-nav a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .83rem; transition: color .2s; }
     .ft-nav a:hover { color: var(--gold); }
-
-    .ft-sep {
-      width: 36px;
-      height: 1px;
-      background: rgba(255,255,255,.12);
-      margin: 1.5rem auto;
-    }
-
-    .ft-addr {
-      font-size: .8rem;
-      color: rgba(255,255,255,.3);
-      margin-bottom: .5rem;
-    }
+    .ft-sep { width: 36px; height: 1px; background: rgba(255,255,255,.12); margin: 1.5rem auto; }
+    .ft-addr { font-size: .8rem; color: rgba(255,255,255,.3); margin-bottom: .5rem; }
     .ft-copy { font-size: .78rem; color: rgba(255,255,255,.25); }
 
-    /* ── ANIMATIONS ──────────────────────────────────── */
-    .fi {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
+    /* ── ANIMATIONS ──────────────────────────── */
+    .fi { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
     .fi.v { opacity: 1; transform: translateY(0); }
     .fi.d1 { transition-delay: .1s; }
     .fi.d2 { transition-delay: .2s; }
     .fi.d3 { transition-delay: .3s; }
-    .fi.d4 { transition-delay: .4s; }
 
-    /* ── RESPONSIVE ──────────────────────────────────── */
+    /* ── RESPONSIVE ──────────────────────────── */
     @media (max-width: 1024px) {
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-img-wrap { order: -1; }
@@ -770,22 +404,15 @@
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .gal-item:nth-child(1) { grid-column: span 5; grid-row: span 1; }
     }
-
     @media (max-width: 768px) {
       section { padding: 4rem 5%; }
       .nav-links { display: none; }
       .ham { display: flex; }
-
-      .gal-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 180px;
-      }
+      .gal-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
       .gal-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
       .gal-item:nth-child(1) { grid-column: span 2; }
-
       .cards { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 480px) {
       .hero-title { font-size: 3.4rem; }
       .strip-sep { display: none; }
@@ -794,127 +421,109 @@
 </head>
 <body>
 
-<!-- ─────────────────── NAV ─────────────────── -->
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">L'<span>Adélaïde</span></a>
-
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">Notre Histoire</a></li>
       <li><a href="#carte">Notre Carte</a></li>
       <li><a href="#contact">Contact</a></li>
       <li>
         <a href="tel:0471073248" class="nav-tel">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.47.57 3.58.11.35.03.74-.24 1.02L6.6 10.8z"/>
-          </svg>
+          <i class="fa-solid fa-phone"></i>
           04 71 07 32 48
         </a>
       </li>
     </ul>
-
     <div class="ham" id="ham" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
-
-<!-- mobile drawer -->
 <div class="nav-drawer" id="drawer">
   <a href="#about" onclick="closeNav()">Notre Histoire</a>
   <a href="#carte" onclick="closeNav()">Notre Carte</a>
   <a href="#contact" onclick="closeNav()">Contact</a>
-  <a href="tel:0471073248" style="color:var(--gold);font-weight:700;">04 71 07 32 48</a>
+  <a href="tel:0471073248" style="color:var(--gold);font-weight:700;" onclick="closeNav()">
+    <i class="fa-solid fa-phone"></i> 04 71 07 32 48
+  </a>
 </div>
 
-<!-- ─────────────────── HERO ─────────────────── -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg" id="heroBg"></div>
-
   <div class="hero-content">
     <div class="chip">Le Puy-en-Velay · Haute-Loire</div>
-
     <h1 class="hero-title">L'<em>Adélaïde</em></h1>
-
     <p class="hero-sub">
       Crêperie<span>·</span>Café Barista<span>·</span>Brunch<span>·</span>Jus Frais
     </p>
-
     <p class="hero-addr">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--gold)">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-      </svg>
+      <i class="fa-solid fa-location-dot" style="color:var(--gold);font-size:.85rem;"></i>
       1 Faubourg Saint-Jean, 43000 Le Puy-en-Velay
     </p>
-
     <div class="hero-btns">
       <a href="#carte" class="btn-gold">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/></svg>
-        Voir la Carte
+        <i class="fa-solid fa-utensils"></i> Voir la Carte
       </a>
       <a href="tel:0471073248" class="btn-ghost">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.47.57 3.58.11.35.03.74-.24 1.02L6.6 10.8z"/></svg>
-        Réserver — 04 71 07 32 48
+        <i class="fa-solid fa-phone"></i> 04 71 07 32 48
       </a>
     </div>
   </div>
-
   <div class="hero-caret">
     <span>Découvrir</span>
     <div class="caret-line"></div>
   </div>
 </section>
 
-<!-- ─────────────────── STRIP ─────────────────── -->
+<!-- STRIP -->
 <div class="strip">
   <div class="strip-inner">
-    <div class="strip-item"><span class="ico">🌾</span> Farines biologiques</div>
+    <div class="strip-item"><i class="fa-solid fa-seedling"></i> Farines biologiques</div>
     <div class="strip-sep"></div>
-    <div class="strip-item"><span class="ico">🌿</span> Circuits courts</div>
+    <div class="strip-item"><i class="fa-solid fa-leaf"></i> Circuits courts</div>
     <div class="strip-sep"></div>
-    <div class="strip-item"><span class="ico">☕</span> Café Barista spécialité</div>
+    <div class="strip-item"><i class="fa-solid fa-mug-hot"></i> Café Barista</div>
     <div class="strip-sep"></div>
-    <div class="strip-item"><span class="ico">🍊</span> Jus pressés à la commande</div>
+    <div class="strip-item"><i class="fa-solid fa-lemon"></i> Jus pressés à la commande</div>
     <div class="strip-sep"></div>
-    <div class="strip-item"><span class="ico">🕖</span> Mar – Sam · 7h00 – 17h30</div>
+    <div class="strip-item"><i class="fa-regular fa-clock"></i> Mar au Sam · 7h à 17h30</div>
   </div>
 </div>
 
-<!-- ─────────────────── ABOUT ─────────────────── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="inner">
     <div class="about-grid">
 
       <div class="about-img-wrap fi">
         <img
-          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=82"
-          alt="Ambiance de L'Adélaïde Crêperie Café"
+          src="images/facade.jpg"
+          alt="Façade de L'Adélaïde Crêperie Café au Puy-en-Velay"
           class="about-img"
         >
-        <div class="about-seal">Bio<br>&amp; Local<br>★★★</div>
+        <div class="about-seal">Bio<br>&amp; Local<br><i class="fa-solid fa-star" style="font-size:.9rem;"></i><i class="fa-solid fa-star" style="font-size:.9rem;"></i><i class="fa-solid fa-star" style="font-size:.9rem;"></i></div>
       </div>
 
       <div class="fi d2">
         <span class="eyebrow">Notre Histoire</span>
         <h2>De l'<em>Australie</em><br>au Puy-en-Velay</h2>
-
         <p class="lead">
           En 2014, Florian s'envole pour l'Australie. C'est dans la ville d'<strong>Adélaïde</strong> qu'il découvre l'art de la crêpe, se perfectionne dans une crêperie française et gravit les échelons jusqu'au poste de manager.
         </p>
-
         <blockquote>
           <p>"Cinq ans à Adélaïde pour mieux revenir aux sources. Ici, chaque galette raconte un voyage."</p>
         </blockquote>
-
         <p class="lead">
           De retour au Puy-en-Velay, il ouvre <strong>L'Adélaïde</strong> en hommage à la ville australienne qui l'a formé. Galettes de sarrasin généreuses, crêpes gourmandes, café barista de spécialité et jus pressés à la commande — une cuisine sincère, avec des farines bio et des produits en circuit court.
         </p>
-
         <div class="tags">
-          <span class="tag">🌾 Sarrasin bio</span>
-          <span class="tag">🐔 Poulet Haute-Loire</span>
-          <span class="tag">☕ Coffee Art</span>
-          <span class="tag">🍊 Jus pressés</span>
+          <span class="tag"><i class="fa-solid fa-seedling"></i> Sarrasin bio</span>
+          <span class="tag"><i class="fa-solid fa-check"></i> Poulet Haute-Loire</span>
+          <span class="tag"><i class="fa-solid fa-mug-hot"></i> Coffee Art</span>
+          <span class="tag"><i class="fa-solid fa-lemon"></i> Jus pressés</span>
         </div>
       </div>
 
@@ -922,39 +531,37 @@
   </div>
 </section>
 
-<!-- ─────────────────── CARTE ─────────────────── -->
+<!-- CARTE -->
 <section id="carte">
   <div class="inner">
 
     <div class="carte-head fi">
       <span class="eyebrow">Notre Carte</span>
-      <h2>Une cuisine <em>généreuse</em> &amp; gourmande</h2>
+      <h2>Une cuisine <em>généreuse</em> et gourmande</h2>
       <p class="lead">Galettes de sarrasin, crêpes sucrées, brunch du matin et boissons artisanales. Tout est préparé à la commande avec des produits soigneusement sélectionnés.</p>
     </div>
 
     <div class="tabs">
-      <button class="tab-btn on" onclick="showTab('galettes',this)">🌾 Galettes Sarrasin</button>
-      <button class="tab-btn" onclick="showTab('crepes',this)">🍯 Crêpes Sucrées</button>
-      <button class="tab-btn" onclick="showTab('brunch',this)">🥞 Brunch</button>
-      <button class="tab-btn" onclick="showTab('boissons',this)">☕ Café &amp; Boissons</button>
+      <button class="tab-btn on" onclick="showTab('galettes',this)"><i class="fa-solid fa-wheat-awn"></i> Galettes Sarrasin</button>
+      <button class="tab-btn" onclick="showTab('crepes',this)"><i class="fa-solid fa-star"></i> Crêpes Sucrées</button>
+      <button class="tab-btn" onclick="showTab('brunch',this)"><i class="fa-solid fa-utensils"></i> Brunch</button>
+      <button class="tab-btn" onclick="showTab('boissons',this)"><i class="fa-solid fa-mug-hot"></i> Café et Boissons</button>
     </div>
 
     <!-- GALETTES -->
     <div id="tab-galettes" class="tab-pane on">
       <div class="cards">
-
         <div class="card fi">
           <img class="card-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="La Darwin">
           <div class="card-body">
             <div class="card-row">
-              <span class="card-name">La Darwin ★</span>
+              <span class="card-name">La Darwin <i class="fa-solid fa-star" style="color:var(--gold);font-size:.75rem;"></i></span>
               <span class="card-price">13,00 €</span>
             </div>
             <p class="card-desc">Poulet de Haute-Loire · Champignons de Paris · Oignons caramélisés maison · Emmental</p>
             <span class="badge">Signature</span>
           </div>
         </div>
-
         <div class="card fi d1">
           <img class="card-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="La Complète">
           <div class="card-body">
@@ -962,10 +569,9 @@
               <span class="card-name">La Complète</span>
               <span class="card-price">9,50 €</span>
             </div>
-            <p class="card-desc">Jambon · Œuf · Emmental fondu</p>
+            <p class="card-desc">Jambon · Oeuf · Emmental fondu</p>
           </div>
         </div>
-
         <div class="card fi d2">
           <img class="card-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80" alt="La Végétarienne">
           <div class="card-body">
@@ -977,7 +583,6 @@
             <span class="badge">Végétarien</span>
           </div>
         </div>
-
         <div class="card fi d3">
           <img class="card-img" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80" alt="La Saumonée">
           <div class="card-body">
@@ -988,37 +593,33 @@
             <p class="card-desc">Saumon fumé · Crème fraîche · Câpres · Citron · Aneth</p>
           </div>
         </div>
-
       </div>
     </div>
 
     <!-- CRÊPES SUCRÉES -->
     <div id="tab-crepes" class="tab-pane">
       <div class="cards">
-
         <div class="card fi">
-          <img class="card-img" src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=600&q=80" alt="La Gourmande 6">
+          <img class="card-img" src="images/crepe-sucrée.jpg" alt="La Gourmande 6">
           <div class="card-body">
             <div class="card-row">
-              <span class="card-name">La Gourmande 6 ★</span>
+              <span class="card-name">La Gourmande 6 <i class="fa-solid fa-star" style="color:var(--gold);font-size:.75rem;"></i></span>
               <span class="card-price">10,00 €</span>
             </div>
             <p class="card-desc">Glace artisanale vanille · Chocolat fondu · Spéculoos concassés · Caramel beurre salé</p>
             <span class="badge">Signature</span>
           </div>
         </div>
-
         <div class="card fi d1">
           <img class="card-img" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Beurre Sucre">
           <div class="card-body">
             <div class="card-row">
-              <span class="card-name">Beurre &amp; Sucre</span>
+              <span class="card-name">Beurre et Sucre</span>
               <span class="card-price">4,50 €</span>
             </div>
             <p class="card-desc">La classique, beurrée à la minute et saupoudrée de sucre fin</p>
           </div>
         </div>
-
         <div class="card fi d2">
           <img class="card-img" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80" alt="La Gourmande">
           <div class="card-body">
@@ -1029,39 +630,35 @@
             <p class="card-desc">Nutella · Banane · Chantilly maison</p>
           </div>
         </div>
-
         <div class="card fi d3">
           <img class="card-img" src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?auto=format&fit=crop&w=600&q=80" alt="Citron Sucre">
           <div class="card-body">
             <div class="card-row">
-              <span class="card-name">Citron &amp; Sucre</span>
+              <span class="card-name">Citron et Sucre</span>
               <span class="card-price">5,00 €</span>
             </div>
             <p class="card-desc">Jus de citron frais pressé · Sucre glace · Beurre</p>
           </div>
         </div>
-
       </div>
     </div>
 
     <!-- BRUNCH -->
     <div id="tab-brunch" class="tab-pane">
       <div class="cards">
-
         <div class="card fi">
-          <img class="card-img" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=600&q=80" alt="Brunch Adelaide">
+          <img class="card-img" src="images/table-plats.jpg" alt="Brunch Adelaide">
           <div class="card-body">
             <div class="card-row">
-              <span class="card-name">Brunch L'Adélaïde ★</span>
+              <span class="card-name">Brunch L'Adélaïde <i class="fa-solid fa-star" style="color:var(--gold);font-size:.75rem;"></i></span>
               <span class="card-price">16,50 €</span>
             </div>
-            <p class="card-desc">Galette salée + Crêpe sucrée + Boisson chaude au choix + Jus frais du jour</p>
+            <p class="card-desc">Galette salée au choix · Crêpe sucrée · Boisson chaude · Jus frais du jour</p>
             <span class="badge">Complet</span>
           </div>
         </div>
-
         <div class="card fi d1">
-          <img class="card-img" src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=600&q=80" alt="Brunch Léger">
+          <img class="card-img" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=600&q=80" alt="Brunch Léger">
           <div class="card-body">
             <div class="card-row">
               <span class="card-name">Brunch Léger</span>
@@ -1070,7 +667,6 @@
             <p class="card-desc">Tartines maison · Fruit de saison · Boisson chaude</p>
           </div>
         </div>
-
         <div class="card fi d2">
           <img class="card-img" src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=600&q=80" alt="Menu Enfant">
           <div class="card-body">
@@ -1079,30 +675,27 @@
               <span class="card-price">9,90 €</span>
             </div>
             <p class="card-desc">Petite crêpe · Boisson · Dessert · Pour les petits aventuriers</p>
-            <span class="badge">−12 ans</span>
+            <span class="badge">12 ans et moins</span>
           </div>
         </div>
-
       </div>
-      <p class="tab-note">🕖 Brunch servi du Mardi au Samedi · 7h00 – 11h00</p>
+      <p class="tab-note"><i class="fa-regular fa-clock"></i> Brunch servi du Mardi au Samedi de 7h00 à 11h00</p>
     </div>
 
     <!-- BOISSONS -->
     <div id="tab-boissons" class="tab-pane">
       <div class="cards">
-
         <div class="card fi">
           <img class="card-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Café Barista">
           <div class="card-body">
             <div class="card-row">
-              <span class="card-name">Café Barista ★</span>
+              <span class="card-name">Café Barista <i class="fa-solid fa-star" style="color:var(--gold);font-size:.75rem;"></i></span>
               <span class="card-price">dès 2,00 €</span>
             </div>
-            <p class="card-desc">Expresso · Cappuccino · Flat White · Latte Art · Créations saisonnières — café de spécialité travaillé avec soin</p>
+            <p class="card-desc">Expresso · Cappuccino · Flat White · Latte Art · Créations saisonnières</p>
             <span class="badge">Coffee Art</span>
           </div>
         </div>
-
         <div class="card fi d1">
           <img class="card-img" src="https://images.unsplash.com/photo-1543362906-ac68580340c3?auto=format&fit=crop&w=600&q=80" alt="Jus Frais">
           <div class="card-body">
@@ -1110,54 +703,51 @@
               <span class="card-name">Jus Frais Pressés</span>
               <span class="card-price">dès 4,50 €</span>
             </div>
-            <p class="card-desc">Pressés à la commande : Sunrise (Orange · Carotte · Gingembre) · Detox Green · Jus du jour</p>
+            <p class="card-desc">Pressés à la commande · Sunrise (Orange, Carotte, Gingembre) · Detox Green · Jus du jour</p>
           </div>
         </div>
-
         <div class="card fi d2">
           <img class="card-img" src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Thé et Chocolat">
           <div class="card-body">
             <div class="card-row">
-              <span class="card-name">Thé &amp; Chocolat</span>
+              <span class="card-name">Thé et Chocolat</span>
               <span class="card-price">dès 3,00 €</span>
             </div>
             <p class="card-desc">Thé en feuilles · Chocolat chaud artisanal · Infusions de saison</p>
           </div>
         </div>
-
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ─────────────────── GALERIE ─────────────────── -->
-<section id="galerie">
+<!-- GALLERY -->
+<section id="galerie" style="padding:4.5rem 0;">
   <div class="gal-head fi">
     <span class="eyebrow">Galerie</span>
-    <h2>Saveurs &amp; <em>Moments</em></h2>
+    <h2>Saveurs et <em>Moments</em></h2>
   </div>
-
   <div class="gal-grid">
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80" alt="Crêpes dorées">
+      <img src="images/facade.jpg" alt="Façade de L'Adélaïde">
     </div>
     <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Latte art">
+      <img src="images/crepe-sucrée.jpg" alt="Crêpe sucrée maison">
+    </div>
+    <div class="gal-item">
+      <img src="images/table-plats.jpg" alt="Table avec galettes et salades">
+    </div>
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Café barista latte art">
     </div>
     <div class="gal-item">
       <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=80" alt="Brunch gourmand">
     </div>
-    <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1543362906-ac68580340c3?auto=format&fit=crop&w=700&q=80" alt="Jus frais">
-    </div>
-    <div class="gal-item">
-      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="Ambiance café">
-    </div>
   </div>
 </section>
 
-<!-- ─────────────────── CONTACT ─────────────────── -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="inner">
     <div class="contact-grid">
@@ -1166,9 +756,7 @@
         <div class="map-wrap">
           <iframe
             src="https://maps.google.com/maps?q=1+Faubourg+Saint-Jean+43000+Le+Puy-en-Velay&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             title="Carte L'Adélaïde Crêperie Café"
           ></iframe>
         </div>
@@ -1179,7 +767,7 @@
         <h2>Informations <em>pratiques</em></h2>
 
         <div class="info-item">
-          <div class="info-ico">📍</div>
+          <div class="info-ico"><i class="fa-solid fa-location-dot"></i></div>
           <div class="info-text">
             <strong>Adresse</strong>
             <p>1 Faubourg Saint-Jean<br>43000 Le Puy-en-Velay</p>
@@ -1187,7 +775,7 @@
         </div>
 
         <div class="info-item">
-          <div class="info-ico">📞</div>
+          <div class="info-ico"><i class="fa-solid fa-phone"></i></div>
           <div class="info-text">
             <strong>Téléphone</strong>
             <a href="tel:0471073248">04 71 07 32 48</a>
@@ -1195,44 +783,38 @@
         </div>
 
         <div class="info-item">
-          <div class="info-ico">🕒</div>
+          <div class="info-ico"><i class="fa-regular fa-clock"></i></div>
           <div class="info-text">
             <strong>Horaires</strong>
             <table class="hours">
+              <tr><td>Lundi</td><td class="ferme">Fermé</td></tr>
               <tr>
-                <td>Lundi</td>
-                <td class="ferme">Fermé</td>
+                <td>Mardi au Jeudi</td>
+                <td>7h00 à 17h30 <span class="open-tag">Ouvert</span></td>
               </tr>
               <tr>
-                <td>Mardi – Samedi</td>
-                <td>7h00 – 17h30 <span class="open-tag">Ouvert</span></td>
+                <td>Vendredi</td>
+                <td>7h00 à 21h30 <span class="late-tag">Soirée</span></td>
               </tr>
               <tr>
-                <td>Brunch</td>
-                <td>7h00 – 11h00</td>
+                <td>Samedi</td>
+                <td>7h00 à 17h30 <span class="open-tag">Ouvert</span></td>
               </tr>
-              <tr>
-                <td>Dimanche</td>
-                <td class="ferme">Fermé</td>
-              </tr>
+              <tr><td>Dimanche</td><td class="ferme">Fermé</td></tr>
             </table>
           </div>
         </div>
 
         <div class="info-item">
-          <div class="info-ico">📲</div>
+          <div class="info-ico"><i class="fa-solid fa-share-nodes"></i></div>
           <div class="info-text">
             <strong>Retrouvez-nous</strong>
             <div class="socials">
-              <a href="https://www.facebook.com/ladelaidecreperiecafetruck/" target="_blank" rel="noopener noreferrer" class="soc-btn" title="Facebook L'Adélaïde">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
+              <a href="https://www.facebook.com/ladelaidecreperiecafetruck/" target="_blank" rel="noopener noreferrer" class="soc-btn" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
               </a>
-              <a href="https://www.tripadvisor.fr/Restaurant_Review-g187092-d26654658-Reviews-L_Adelaide-Le_Puy_en_Velay_Haute_Loire_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener noreferrer" class="soc-btn" title="TripAdvisor L'Adélaïde">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-5h2V7h-2v8zm0 4h2v-2h-2v2z"/>
-                </svg>
+              <a href="https://www.tripadvisor.fr/Restaurant_Review-g187092-d26654658-Reviews-L_Adelaide-Le_Puy_en_Velay_Haute_Loire_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener noreferrer" class="soc-btn" title="TripAdvisor">
+                <i class="fa-brands fa-tripadvisor"></i>
               </a>
             </div>
           </div>
@@ -1243,11 +825,10 @@
   </div>
 </section>
 
-<!-- ─────────────────── FOOTER ─────────────────── -->
+<!-- FOOTER -->
 <footer>
   <div class="ft-logo">L'<span>Adélaïde</span></div>
   <div class="ft-sub">Crêperie · Café Barista · Brunch · Jus Frais</div>
-
   <nav class="ft-nav">
     <a href="#about">Notre Histoire</a>
     <a href="#carte">Notre Carte</a>
@@ -1256,64 +837,48 @@
     <a href="tel:0471073248">04 71 07 32 48</a>
     <a href="https://www.facebook.com/ladelaidecreperiecafetruck/" target="_blank" rel="noopener noreferrer">Facebook</a>
   </nav>
-
   <div class="ft-sep"></div>
   <p class="ft-addr">1 Faubourg Saint-Jean · 43000 Le Puy-en-Velay</p>
   <p class="ft-copy">© 2024 L'Adélaïde Crêperie Café · Tous droits réservés</p>
 </footer>
 
 <script>
-  // ── NAV SCROLL ──────────────────────────────────
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
-  // ── MOBILE NAV ──────────────────────────────────
   function toggleNav() {
-    const ham = document.getElementById('ham');
-    const drawer = document.getElementById('drawer');
-    ham.classList.toggle('open');
-    drawer.classList.toggle('open');
+    document.getElementById('ham').classList.toggle('open');
+    document.getElementById('drawer').classList.toggle('open');
   }
   function closeNav() {
     document.getElementById('ham').classList.remove('open');
     document.getElementById('drawer').classList.remove('open');
   }
 
-  // ── HERO PARALLAX ───────────────────────────────
   const heroBg = document.getElementById('heroBg');
   window.addEventListener('scroll', () => {
     if (window.scrollY < window.innerHeight) {
       heroBg.style.transform = `scale(1.08) translateY(${window.scrollY * 0.25}px)`;
     }
   }, { passive: true });
+  requestAnimationFrame(() => { heroBg.style.transform = 'scale(1) translateY(0)'; });
 
-  // hero zoom-in on load
-  requestAnimationFrame(() => {
-    heroBg.style.transform = 'scale(1) translateY(0)';
-  });
-
-  // ── TABS ────────────────────────────────────────
   function showTab(name, btn) {
     document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('on'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
     document.getElementById('tab-' + name).classList.add('on');
     btn.classList.add('on');
-    // re-trigger animations
     document.querySelectorAll('#tab-' + name + ' .fi').forEach(el => {
       el.classList.remove('v');
       requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('v')));
     });
   }
 
-  // ── INTERSECTION OBSERVER ───────────────────────
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('v');
-    });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
   document.querySelectorAll('.fi').forEach(el => io.observe(el));
 </script>
 
