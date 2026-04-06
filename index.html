@@ -148,8 +148,8 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(to bottom, rgba(20,8,2,.55) 0%, rgba(20,8,2,.28) 45%, rgba(20,8,2,.72) 100%),
-        url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
+        linear-gradient(to bottom, rgba(20,8,2,.52) 0%, rgba(20,8,2,.22) 40%, rgba(20,8,2,.68) 100%),
+        url('images/crepe.jpg') center/cover no-repeat;
       will-change: transform;
     }
     .hero-content {
@@ -832,6 +832,7 @@
     <a href="tel:0471073248">04 71 07 32 48</a>
     <a href="https://www.facebook.com/ladelaidecreperiecafetruck/" target="_blank" rel="noopener noreferrer">Facebook</a>
     <a href="https://www.instagram.com/ladelaidecreperiecafe/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://www.tripadvisor.fr/Restaurant_Review-g187092-d26654658-Reviews-L_Adelaide-Le_Puy_en_Velay_Haute_Loire_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a>
   </nav>
   <div class="ft-sep"></div>
   <p class="ft-addr">1 Faubourg Saint-Jean · 43000 Le Puy-en-Velay</p>
@@ -854,17 +855,31 @@
   }
 
   const heroBg = document.getElementById('heroBg');
-  // Zoom-in animation on load, then remove transition for smooth scroll parallax
-  heroBg.style.transform = 'scale(1.06)';
-  heroBg.style.transition = 'transform 2.5s ease-out';
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    heroBg.style.transform = 'scale(1)';
-  }));
-  setTimeout(() => { heroBg.style.transition = 'none'; }, 2600);
+  let lastZoom = 0;
+
+  function playZoom() {
+    const now = Date.now();
+    if (now - lastZoom < 2400) return; // debounce
+    lastZoom = now;
+    heroBg.style.transition = 'transform 2.2s ease-out';
+    heroBg.style.transform = 'scale(1.06) translateY(0)';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      heroBg.style.transform = 'scale(1) translateY(0)';
+    }));
+    setTimeout(() => { heroBg.style.transition = 'none'; }, 2300);
+  }
+
+  playZoom(); // entrance animation on load
+
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     if (y < window.innerHeight) {
-      heroBg.style.transform = `translateY(${y * 0.28}px)`;
+      if (y < 8) {
+        playZoom(); // replay zoom when back at top
+      } else {
+        heroBg.style.transition = 'none';
+        heroBg.style.transform = `scale(1) translateY(${y * 0.28}px)`;
+      }
     }
   }, { passive: true });
 
