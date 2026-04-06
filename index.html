@@ -371,6 +371,7 @@
       transition: background .22s, color .22s;
     }
     .soc-btn:hover { background: var(--brown); color: #fff; }
+    .soc-btn:hover img { filter: brightness(0) invert(1); }
 
     /* ── FOOTER ──────────────────────────────── */
     footer { background: var(--coffee); color: rgba(255,255,255,.55); padding: 3.5rem 5% 2.5rem; text-align: center; }
@@ -814,7 +815,7 @@
                 <i class="fa-brands fa-instagram"></i>
               </a>
               <a href="https://www.tripadvisor.fr/Restaurant_Review-g187092-d26654658-Reviews-L_Adelaide-Le_Puy_en_Velay_Haute_Loire_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener noreferrer" class="soc-btn" title="TripAdvisor">
-                <i class="fa-brands fa-tripadvisor"></i>
+                <img src="images/tripadvisor.svg" alt="TripAdvisor" style="width:20px;height:20px;color:inherit;">
               </a>
             </div>
           </div>
@@ -864,7 +865,7 @@
 
   function playZoom() {
     const now = Date.now();
-    if (now - lastZoom < 2400) return; // debounce
+    if (now - lastZoom < 2400) return false; // debounced
     lastZoom = now;
     heroBg.style.transition = 'transform 2.2s ease-out';
     heroBg.style.transform = 'scale(1.06) translateY(0)';
@@ -872,6 +873,7 @@
       heroBg.style.transform = 'scale(1) translateY(0)';
     }));
     setTimeout(() => { heroBg.style.transition = 'none'; }, 2300);
+    return true;
   }
 
   playZoom(); // entrance animation on load
@@ -880,7 +882,11 @@
     const y = window.scrollY;
     if (y < window.innerHeight) {
       if (y < 8) {
-        playZoom(); // replay zoom when back at top
+        // If zoom is debounced, still snap the bg back to top immediately
+        if (!playZoom()) {
+          heroBg.style.transition = 'none';
+          heroBg.style.transform = 'scale(1) translateY(0)';
+        }
       } else {
         heroBg.style.transition = 'none';
         heroBg.style.transform = `scale(1) translateY(${y * 0.28}px)`;
