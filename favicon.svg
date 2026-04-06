@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Teal background -->
+  <circle cx="50" cy="50" r="50" fill="#2A7D74"/>
+  <!-- Outer cup rim oval -->
+  <ellipse cx="50" cy="54" rx="30" ry="35" fill="none" stroke="white" stroke-width="3.5"/>
+  <!-- Coffee surface circle -->
+  <circle cx="50" cy="49" r="20" fill="none" stroke="white" stroke-width="3"/>
+  <!-- Latte art heart -->
+  <path d="M50 46 C50 46 44 40.5 44 37.5 C44 35 46.3 33.5 48.8 35.8 L50 37.2 L51.2 35.8 C53.7 33.5 56 35 56 37.5 C56 40.5 50 46 50 46Z" fill="white"/>
+</svg>
